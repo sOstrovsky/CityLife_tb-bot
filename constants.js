@@ -3,6 +3,11 @@ export const constants = {
     GQL_QUERY:
         `query docs {
             companyDocuments {
+                contacts {
+                    phone
+                    email
+                    telegram
+                }
                 about {
                     title
                     link
@@ -44,4 +49,8 @@ export const constants = {
     MATERIALS_BACK: '< Материалы',
     DOCUMENT_UNAVAILABLE: 'Документ временно недоступен. Мы уже работаем над этой проблемой \u{1F527}',
     VIDEO_UNAVAILABLE: 'Видео временно недоступно. Мы уже работаем над этой проблемой \u{1F527}',
+    SUPPORT_TITLE: 'По всем вопросам обращайтесь в поддержку проекта:',
+    SUPPORT_PHONE: 'Наш телефон:',
+    SUPPORT_EMAIL: 'Наш email:',
+    SUPPORT_TELEGRAM: 'Чат поддержки:',
 };

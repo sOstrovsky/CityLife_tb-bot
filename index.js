@@ -2,13 +2,17 @@ import TelegramBot from 'node-telegram-bot-api';
 import config from 'config';
 import { constants } from './constants';
 import { postQuery } from './helpers';
-import { find } from 'lodash';
+import { find } from 'lodash'
+import moment from 'moment';
 
 const TOKEN = config.get('token');
 
 const bot = new TelegramBot(TOKEN, {polling: true});
 
 let aboutUrl = '';
+let emailSupport = '';
+let phoneSupport = '';
+let telegramSupport = '';
 let marketing = [];
 let video = [];
 let faqUser = [];
@@ -17,16 +21,23 @@ let promo = [];
 let franchise = [];
 
 let current = 'root';
+let documentsDownloadDate = moment();
 
 const mainMenu = [["О компании", "Материалы"], ["Поддержка", "База знаний"], ["Стикеры CityLife"]];
 const materials = [["Маркетинг", "Видео"], ["Акции", "Мини-франшиза"], [constants.MAIN_BACK] ];
 const faqMenu = [["Для пользователей", "Для ТСП"], [constants.MAIN_BACK] ];
 
 bot.onText(/\/start/, async (msg) => {
+    console.log('---', documentsDownloadDate);
     try {
         let response = await postQuery(constants.FETCH_URL, constants.GQL_QUERY);
-        const { about, materials, faq } = response.data.data.companyDocuments;
+        const { contacts, about, materials, faq } = response.data.data.companyDocuments;
 
+        documentsDownloadDate = moment();
+
+        emailSupport = contacts.email;
+        phoneSupport = contacts.phone;
+        telegramSupport = contacts.telegram;
         aboutUrl = about.link;
         marketing = materials.marketing;
         video = materials.video;
@@ -49,9 +60,30 @@ bot.onText(/\/start/, async (msg) => {
     }
 });
 
-bot.on('message', (msg) => {
+bot.on('message', async (msg) => {
     const { id } = msg.chat;
-    console.log(msg);
+    console.log('---', msg);
+    if (moment(documentsDownloadDate).add(1, 'd') < moment()) {
+        try {
+            let response = await postQuery(constants.FETCH_URL, constants.GQL_QUERY);
+            const { contacts, about, materials, faq } = response.data.data.companyDocuments;
+
+            documentsDownloadDate = moment();
+
+            emailSupport = contacts.email;
+            phoneSupport = contacts.phone;
+            telegramSupport = contacts.telegram;
+            aboutUrl = about.link;
+            marketing = materials.marketing;
+            video = materials.video;
+            promo = materials.actions;
+            franchise = materials.franchise;
+            faqUser = faq.user;
+            faqPartner = faq.partner;
+        } catch (err) {
+            console.log('-error-', err);
+        }
+    }
 
     if (current === 'marketing') {
 
@@ -217,8 +249,8 @@ bot.onText(/^Поддержка/, (msg) => {
 
     console.log(msg);
 
-    bot.sendMessage(id, constants.REPAIR, {
-        "reply_markup": {
+    bot.sendMessage(id, `${constants.SUPPORT_TITLE}\n${constants.SUPPORT_PHONE} ${phoneSupport}\n${constants.SUPPORT_EMAIL} ${emailSupport}\n${constants.SUPPORT_TELEGRAM} ${telegramSupport}`, {
+            "reply_markup": {
             "keyboard": mainMenu,
             "resize_keyboard": true
         }
@@ -244,7 +276,7 @@ bot.onText(/^Стикеры CityLife/, (msg) => {
     console.log(msg);
 
     bot.sendMessage(id,
-        "<b>Добавляй себе</b>\n<a href='https://t.me/addstickers/CityLife_emoji'>наши фирменные стикеры!</a>",
+        "<b>Добавляй себе </b><a href='https://t.me/addstickers/CityLife_emoji'>наши фирменные стикеры!</a>",
         { parse_mode: "HTML" },
         {
             "reply_markup": {
