@@ -1,11 +1,11 @@
-const TelegramBot = 'node-telegram-bot-api';
-const config = 'config';
-const { constants } = './constants';
-const { postQuery } = './helpers';
-const { find } = 'lodash'
-const moment = 'moment';
+import TelegramBot from 'node-telegram-bot-api';
+import config from 'config';
+import { constants } from './constants';
+import { postQuery } from './helpers';
+import { find } from 'lodash'
+import moment from 'moment';
 
-const TOKEN = '544351615:AAEciF00mTXRPnDEjWrCh11gx5mMS3xNLNE';
+const TOKEN = config.get('token');
 
 const bot = new TelegramBot(TOKEN, {polling: true});
 
