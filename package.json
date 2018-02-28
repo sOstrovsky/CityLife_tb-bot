@@ -7,9 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "babel-node index.js --presets=env"
   },
-  "engines": {
-    "node": "9.5.0"
-  },
   "keywords": [],
   "author": "Sergey Ostrovsky",
   "license": "ISC",
