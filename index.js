@@ -1,13 +1,13 @@
 import TelegramBot from 'node-telegram-bot-api';
-// import config from 'config';
+import config from 'config';
 import { constants } from './constants';
 import { postQuery } from './helpers';
 import { find } from 'lodash'
 import moment from 'moment';
 
-// const TOKEN = config.get('token');
+const TOKEN = config.get('token');
 
-const bot = new TelegramBot('544351615:AAEciF00mTXRPnDEjWrCh11gx5mMS3xNLNE', {polling: true});
+const bot = new TelegramBot(TOKEN, {polling: true});
 
 let aboutUrl = '';
 let emailSupport = '';
