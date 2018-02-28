@@ -4,7 +4,7 @@ import { constants } from './constants';
 import { postQuery } from './helpers';
 import { find } from 'lodash'
 import moment from 'moment';
-
+import './web';
 const TOKEN = config.get('token');
 
 const bot = new TelegramBot(TOKEN, {polling: true});
