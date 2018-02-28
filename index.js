@@ -5,7 +5,7 @@ const { postQuery } = './helpers';
 const { find } = 'lodash'
 const moment = 'moment';
 
-const TOKEN = config.get('token');
+const TOKEN = '544351615:AAEciF00mTXRPnDEjWrCh11gx5mMS3xNLNE';
 
 const bot = new TelegramBot(TOKEN, {polling: true});
 
