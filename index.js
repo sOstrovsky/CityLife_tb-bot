@@ -5,9 +5,11 @@ import { postQuery } from './helpers';
 import { find } from 'lodash'
 import moment from 'moment';
 
+const port = process.env.PORT || 8443;
+const host = process.env.HOST;
 const TOKEN = config.get('token');
 
-const bot = new TelegramBot(TOKEN, {polling: true});
+const bot = new TelegramBot(TOKEN, {webHook: {port: port, host: host}});
 
 let aboutUrl = '';
 let emailSupport = '';
