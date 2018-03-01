@@ -5,10 +5,14 @@ import { postQuery } from './helpers';
 import { find } from 'lodash'
 import moment from 'moment';
 import './web';
+import https from "https";
+//refresh every 5 minutes
+setInterval(() => {
+    https.get("https://citylife-tb-bot.herokuapp.com/");
+}, 300000);
 const TOKEN = config.get('token');
 
 const bot = new TelegramBot(TOKEN, {polling: true});
-
 let aboutUrl = '';
 let emailSupport = '';
 let phoneSupport = '';
