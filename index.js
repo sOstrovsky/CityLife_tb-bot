@@ -5,9 +5,10 @@ import { postQuery } from './helpers';
 import { find } from 'lodash'
 import moment from 'moment';
 import './web';
-import https from "https";
+import https from 'https';
 //refresh every 5 minutes
 setInterval(() => {
+    console.log('im still alive!');
     https.get("https://citylife-tb-bot.herokuapp.com/");
 }, 300000);
 const TOKEN = config.get('token');
