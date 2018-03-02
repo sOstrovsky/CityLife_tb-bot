@@ -240,7 +240,9 @@ bot.onText(/^О компании/, (msg) => {
     const { id } = msg.chat;
 
     current = 'root';
-    bot.sendDocument(id, aboutUrl, {
+    bot.sendMessage(id, constants.ABOUT_MARKDOWN,
+        { parse_mode: "HTML" },
+        {
         "reply_markup": {
             "keyboard": mainMenu,
             "resize_keyboard": true
