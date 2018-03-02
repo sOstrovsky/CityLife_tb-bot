@@ -53,17 +53,24 @@ export const constants = {
     SUPPORT_PHONE: 'Наш телефон:',
     SUPPORT_EMAIL: 'Наш email:',
     SUPPORT_TELEGRAM: 'Чат поддержки:',
-    START_MARKDOWN:'Добро пожаловать в чат <b>CITYLIFE</b>!\\n\n' +
-    '<b>CITYLIFE</b> — российская IT-компания, разработчик и правообладатель программного обеспечения, интеграционных модулей, коалиционной программы лояльности, сайтов и приложений под брендом <b>CITYLIFE</b>.\\n\n' +
-    'Здесь мы делимся новостями <b>CITYLIFE</b> со своими клиентами и теми, кто всегда нацелен на результат.\\n\n' +
-    'Мы в социальных сетях:\\n\n' +
+    START_MARKDOWN:'Добро пожаловать в чат <b>CITYLIFE</b>!\n' +
+    '\n' +
+    '<b>CITYLIFE</b> — российская IT-компания, разработчик и правообладатель программного обеспечения, интеграционных модулей, коалиционной программы лояльности, сайтов и приложений под брендом <b>CITYLIFE</b>.\n' +
+    '\n' +
+    'Здесь мы делимся новостями <b>CITYLIFE</b> со своими клиентами и теми, кто всегда нацелен на результат.\n' +
+    '\n' +
+    'Мы в социальных сетях:\n' +
+    '\n' +
     '  •  <a href="https://vk.com/citylife_official">Официальная группа Вконтакте</a>\n' +
     '  •  <a href="https://www.instagram.com/citylife.official/">Официальный профиль Instagram</a>\n' +
     '  •  <a href="https://www.facebook.com/official.citylife">Официальная группа Facebook</a>\n' +
     '  •  <a href="https://ok.ru/citylife.official">Официальная группа в ОК</a>\n' +
-    '  •  <a href="https://www.youtube.com/channel/UCfa56CVRUo9ABjV4xArhFnw">Официальный канал на YouTube</a>\\n\n' +
-    'Официальный сайт <b>CITYLIFE</b>:\\n\n' +
-    '  •  <a href="https://cl.world/ru">https://cl.world/ru</a>\\n\n' +
+    '  •  <a href="https://www.youtube.com/channel/UCfa56CVRUo9ABjV4xArhFnw">Официальный канал на YouTube</a>\n' +
+    '\n' +
+    'Официальный сайт <b>CITYLIFE</b>:\n' +
+    '\n' +
+    '  •  <a href="https://cl.world/ru">https://cl.world/ru</a>\n' +
+    '\n' +
     '<b>CITYLIFE</b> - Одна карта. Масса привилегий.\n',
     ABOUT_MARKDOWN: '<b>CITYLIFE</b> — российская  IT-компания, разработчик и правообладатель программного обеспечения, интеграционных модулей, коалиционной программы лояльности, сайтов и приложений под брендом <b>CITYLIFE</b>.\n' +
     '\n' +
@@ -108,5 +115,5 @@ export const constants = {
     '\n' +
     'Залогом успеха в дистрибьюторской бизнес-модели служит принцип равного взаимодействия. В нем выигрывают все участники процесса.\n' +
     '\n' +
-    '<b>CityLife - Одна карта. Масса привилегий.</b>\n'
+    '<b>CityLife - Одна карта. Масса привилегий.</b>\n',
 };
