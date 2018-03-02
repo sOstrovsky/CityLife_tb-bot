@@ -59,11 +59,11 @@ bot.onText(/\/start/, async (msg) => {
 <b>CITYLIFE</b> — российская IT-компания, разработчик и правообладатель программного обеспечения, интеграционных модулей, коалиционной программы лояльности, сайтов и приложений под брендом <b>CITYLIFE</b>.\n\n
 Здесь мы делимся новостями CityLife со своими клиентами и теми, кто всегда нацелен на результат.\n\n
 Мы в социальных сетях:\n
-  •  <a href="https://vk.com/citylife_official">https://vk.com/citylife_official</a>
-  •  <a href="https://www.instagram.com/citylife.official/">https://www.instagram.com/citylife.official/</a>
-  •  <a href="https://www.facebook.com/official.citylife">https://www.facebook.com/official.citylife</a>
-  •  <a href="https://ok.ru/citylife.official">https://ok.ru/citylife.official</a>
-  •  <a href="https://www.youtube.com/channel/UCfa56CVRUo9ABjV4xArhFnw">https://www.youtube.com/channel/UCfa56CVRUo9ABjV4xArhFnw</a>\n\n
+  •  <a href="https://vk.com/citylife_official">Официальная группа Вконтакте</a>
+  •  <a href="https://www.instagram.com/citylife.official/">Официальный профиль Instagram</a>
+  •  <a href="https://www.facebook.com/official.citylife">Официальная группа Facebook</a>
+  •  <a href="https://ok.ru/citylife.official">Официальная группа в ОК</a>
+  •  <a href="https://www.youtube.com/channel/UCfa56CVRUo9ABjV4xArhFnw">Официальный канал на YouTube</a>\n\n
 Официальный сайт <b>CITYLIFE</b>:\n
   •  <a href="https://cl.world/ru">https://cl.world/ru</a>\n\n
 <b>CITYLIFE</b> - Одна карта. Масса привилегий.
