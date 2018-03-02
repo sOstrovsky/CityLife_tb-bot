@@ -55,7 +55,7 @@ bot.onText(/\/start/, async (msg) => {
         const name = first_name ? first_name + (last_name ? ' ' + last_name : '' ) : '';
 
         bot.sendMessage(id, `Привет${Boolean(name) ? ', ' + name : ''}!\n${constants.START_MARKDOWN}`,
-            { parse_mode: "HTML", disable_web_page_preview: true },
+            { parse_mode: "HTML" },
             {
                 "reply_markup": {
                     "keyboard": mainMenu,
