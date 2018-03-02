@@ -55,11 +55,11 @@ bot.onText(/\/start/, async (msg) => {
         const name = first_name ? first_name + (last_name ? ' ' + last_name : '' ) : '';
 
         bot.sendMessage(id, `Привет${Boolean(name) ? ', ' + name : ''}!\n${constants.START_MARKDOWN}`,
-            { parse_mode: "HTML" },
             {
-                "reply_markup": {
+                parse_mode: "HTML",
+                reply_markup: {
                     "keyboard": mainMenu,
-                    "resize_keyboard": true
+                    "resize_keyboard": true,
             }
         }).catch(err => console.warn(err));
     } catch (err) {
@@ -101,13 +101,13 @@ bot.on('message', async (msg) => {
 
         if (obj) {
             bot.sendDocument(id, obj.link, {
-                "reply_markup": {
+                reply_markup: {
                     "keyboard": materialsMenu,
-                    "resize_keyboard": true
+                    "resize_keyboard": true,
                 }
             }).catch(err => {
                 bot.sendMessage(id, constants.DOCUMENT_UNAVAILABLE, {
-                    "reply_markup": {
+                    reply_markup: {
                         "keyboard": materialsMenu,
                         "resize_keyboard": true
                     }
@@ -125,13 +125,13 @@ bot.on('message', async (msg) => {
         if (obj) {
 
             bot.sendMessage(id, obj.link, {
-                "reply_markup": {
+                reply_markup: {
                     "keyboard": menu,
                     "resize_keyboard": true
                 }
             }).catch(err => {
                 bot.sendMessage(id, constants.VIDEO_UNAVAILABLE, {
-                    "reply_markup": {
+                    reply_markup: {
                         "keyboard": menu,
                         "resize_keyboard": true
                     }
@@ -148,7 +148,7 @@ bot.on('message', async (msg) => {
 
         if (obj) {
             bot.sendMessage(id, obj.answer, {
-                "reply_markup": {
+                reply_markup: {
                     "keyboard": menuUser,
                     "resize_keyboard": true
                 }
@@ -165,7 +165,7 @@ bot.on('message', async (msg) => {
 
         if (obj) {
             bot.sendMessage(id, obj.answer, {
-                "reply_markup": {
+                reply_markup: {
                     "keyboard": menuPartner,
                     "resize_keyboard": true
                 }
@@ -182,13 +182,13 @@ bot.on('message', async (msg) => {
 
         if (obj) {
             bot.sendDocument(id, obj.link, {
-                "reply_markup": {
+                reply_markup: {
                     "keyboard": menuPromo,
                     "resize_keyboard": true
                 }
             }).catch(err => {
                 bot.sendMessage(id, constants.DOCUMENT_UNAVAILABLE, {
-                    "reply_markup": {
+                    reply_markup: {
                         "keyboard": menuPromo,
                         "resize_keyboard": true
                     }
@@ -205,13 +205,13 @@ bot.on('message', async (msg) => {
 
         if (obj) {
             bot.sendDocument(id, obj.link, {
-                "reply_markup": {
+                reply_markup: {
                     "keyboard": menuFranchise,
                     "resize_keyboard": true
                 }
             }).catch(err => {
                 bot.sendMessage(id, constants.DOCUMENT_UNAVAILABLE, {
-                    "reply_markup": {
+                    reply_markup: {
                         "keyboard": menuFranchise,
                         "resize_keyboard": true
                     }
@@ -230,11 +230,11 @@ bot.onText(/^О компании/, (msg) => {
 
     current = 'root';
     bot.sendMessage(id, constants.ABOUT_MARKDOWN,
-        { parse_mode: "HTML" },
         {
-        "reply_markup": {
-            "keyboard": mainMenu,
-            "resize_keyboard": true
+            parse_mode: "HTML",
+            reply_markup: {
+                "keyboard": mainMenu,
+                "resize_keyboard": true,
         }
     }).catch(err => console.warn(err));
 });
@@ -247,7 +247,7 @@ bot.onText(/^Материалы/, (msg) => {
     current = 'materials';
 
     bot.sendMessage(id, constants.CHOOSE_ONE_OF, {
-        "reply_markup": {
+        reply_markup: {
             "keyboard": materials,
             "resize_keyboard": true
         }
@@ -259,7 +259,7 @@ bot.onText(/^Поддержка/, (msg) => {
     console.log(msg);
 
     bot.sendMessage(id, `${constants.SUPPORT_TITLE}\n${constants.SUPPORT_PHONE} ${phoneSupport}\n${constants.SUPPORT_EMAIL} ${emailSupport}\n${constants.SUPPORT_TELEGRAM} ${telegramSupport}`, {
-            "reply_markup": {
+            reply_markup: {
             "keyboard": mainMenu,
             "resize_keyboard": true
         }
@@ -272,7 +272,7 @@ bot.onText(/^База знаний/, (msg) => {
     console.log(msg);
 
     bot.sendMessage(id, constants.CHOOSE_ONE_OF, {
-        "reply_markup": {
+        reply_markup: {
             "keyboard": faqMenu,
             "resize_keyboard": true
         }
@@ -288,7 +288,7 @@ bot.onText(/^Стикеры CityLife/, (msg) => {
         "<b>Добавляй себе </b><a href='https://t.me/addstickers/CityLife_emoji'>наши фирменные стикеры!</a>",
         { parse_mode: "HTML" },
         {
-            "reply_markup": {
+            reply_markup: {
                 "keyboard": mainMenu,
                 "resize_keyboard": true
             }
@@ -311,7 +311,7 @@ bot.onText(/^Для пользователей/, (msg) => {
     current = 'faqU';
 
     bot.sendMessage(id, constants.CHOOSE_ONE_OF, {
-        "reply_markup": {
+        reply_markup: {
             "keyboard": faqMenu,
             "resize_keyboard": true
         }
@@ -329,7 +329,7 @@ bot.onText(/^Для ТСП/, (msg) => {
     current = 'faqP';
 
     bot.sendMessage(id, constants.CHOOSE_ONE_OF, {
-        "reply_markup": {
+        reply_markup: {
             "keyboard": faqMenu,
             "resize_keyboard": true
         }
@@ -351,7 +351,7 @@ bot.onText(/^Маркетинг/, (msg) => {
     current = 'marketing';
 
     bot.sendMessage(id, constants.CHOOSE_ONE_OF, {
-        "reply_markup": {
+        reply_markup: {
             "keyboard": marketingMenu,
             "resize_keyboard": true
         }
@@ -369,7 +369,7 @@ bot.onText(/^Видео/, (msg) => {
     current = 'video';
 
     bot.sendMessage(id, constants.CHOOSE_ONE_OF, {
-        "reply_markup": {
+        reply_markup: {
             "keyboard": videoMenu,
             "resize_keyboard": true
         }
@@ -387,7 +387,7 @@ bot.onText(/^Акции/, (msg) => {
     current = 'promo';
 
     bot.sendMessage(id, constants.CHOOSE_ONE_OF, {
-        "reply_markup": {
+        reply_markup: {
             "keyboard": promoMenu,
             "resize_keyboard": true
         }
@@ -405,7 +405,7 @@ bot.onText(/^Мини-франшиза/, (msg) => {
     current = 'franchise';
 
     bot.sendMessage(id, constants.CHOOSE_ONE_OF, {
-        "reply_markup": {
+        reply_markup: {
             "keyboard": franchiseMenu,
             "resize_keyboard": true
         }
@@ -425,7 +425,7 @@ bot.onText(/^< Материалы/, (msg) => {
     current = 'materials';
 
     bot.sendMessage(id, constants.CHOOSE_ONE_OF, {
-        "reply_markup": {
+        reply_markup: {
             "keyboard": materials,
             "resize_keyboard": true
         }
@@ -440,7 +440,7 @@ bot.onText(/^< Основное меню/, (msg) => {
     current = 'root';
 
     bot.sendMessage(id, constants.CHOOSE_ONE_OF, {
-        "reply_markup": {
+        reply_markup: {
             "keyboard": mainMenu,
             "resize_keyboard": true
         }
@@ -453,7 +453,7 @@ bot.onText(/^< База знаний/, (msg) => {
     console.log(msg);
 
     bot.sendMessage(id, constants.CHOOSE_ONE_OF, {
-        "reply_markup": {
+        reply_markup: {
             "keyboard": faqMenu,
             "resize_keyboard": true
         }
