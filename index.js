@@ -54,7 +54,7 @@ bot.onText(/\/start/, async (msg) => {
         const {chat: {id, first_name, last_name}} = msg;
         const name = first_name ? first_name + (last_name ? ' ' + last_name : '' ) : '';
 
-        bot.sendMessage(id, `Привет${Boolean(name) ? ', ' + name : ''}!`, {
+        bot.sendMessage(id, `Привет${Boolean(name) ? ', ' + name : ''}!\nДобро пожаловать в чат CityLife!\n\nCityLife — российская IT-компания, разработчик и правообладатель программного обеспечения, интеграционных модулей, коалиционной программы лояльности, сайтов и приложений под брендом CityLife.`, {
             "reply_markup": {
                 "keyboard": mainMenu,
                 "resize_keyboard": true
