@@ -55,8 +55,8 @@ bot.onText(/\/start/, async (msg) => {
         const name = first_name ? first_name + (last_name ? ' ' + last_name : '' ) : '';
 
         bot.sendMessage(id, `Привет${Boolean(name) ? ', ' + name : ''}!\n\n
-Добро пожаловать в чат CityLife!\n\n
-<b>CityLife</b> — российская IT-компания, разработчик и правообладатель программного обеспечения, интеграционных модулей, коалиционной программы лояльности, сайтов и приложений под брендом <b>CityLife</b>.\n\n
+Добро пожаловать в чат <b>CITYLIFE</b>!\n\n
+<b>CITYLIFE</b> — российская IT-компания, разработчик и правообладатель программного обеспечения, интеграционных модулей, коалиционной программы лояльности, сайтов и приложений под брендом <b>CITYLIFE</b>.\n\n
 Здесь мы делимся новостями CityLife со своими клиентами и теми, кто всегда нацелен на результат.\n\n
 Мы в социальных сетях:\n
   •  <a href="https://vk.com/citylife_official">https://vk.com/citylife_official</a>
@@ -64,9 +64,9 @@ bot.onText(/\/start/, async (msg) => {
   •  <a href="https://www.facebook.com/official.citylife">https://www.facebook.com/official.citylife</a>
   •  <a href="https://ok.ru/citylife.official">https://ok.ru/citylife.official</a>
   •  <a href="https://www.youtube.com/channel/UCfa56CVRUo9ABjV4xArhFnw">https://www.youtube.com/channel/UCfa56CVRUo9ABjV4xArhFnw</a>\n\n
-Официальный сайт CityLife:\n
+Официальный сайт <b>CITYLIFE</b>:\n
   •  <a href="https://cl.world/ru">https://cl.world/ru</a>\n\n
-CityLife - Одна карта. Масса привилегий.
+<b>CITYLIFE</b> - Одна карта. Масса привилегий.
 `, { parse_mode: "HTML" }, {
             "reply_markup": {
                 "keyboard": mainMenu,
