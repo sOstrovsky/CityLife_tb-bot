@@ -54,18 +54,18 @@ bot.onText(/\/start/, async (msg) => {
         const {chat: {id, first_name, last_name}} = msg;
         const name = first_name ? first_name + (last_name ? ' ' + last_name : '' ) : '';
 
-        bot.sendMessage(id, `Привет${Boolean(name) ? ', ' + name : ''}!\n\n
-Добро пожаловать в чат <b>CITYLIFE</b>!\n\n
-<b>CITYLIFE</b> — российская IT-компания, разработчик и правообладатель программного обеспечения, интеграционных модулей, коалиционной программы лояльности, сайтов и приложений под брендом <b>CITYLIFE</b>.\n\n
-Здесь мы делимся новостями CityLife со своими клиентами и теми, кто всегда нацелен на результат.\n\n
+        bot.sendMessage(id, `Привет${Boolean(name) ? ', ' + name : ''}!\n
+Добро пожаловать в чат <b>CITYLIFE</b>!\n
+<b>CITYLIFE</b> — российская IT-компания, разработчик и правообладатель программного обеспечения, интеграционных модулей, коалиционной программы лояльности, сайтов и приложений под брендом <b>CITYLIFE</b>.\n
+Здесь мы делимся новостями CityLife со своими клиентами и теми, кто всегда нацелен на результат.\n
 Мы в социальных сетях:\n
   •  <a href="https://vk.com/citylife_official">Официальная группа Вконтакте</a>
   •  <a href="https://www.instagram.com/citylife.official/">Официальный профиль Instagram</a>
   •  <a href="https://www.facebook.com/official.citylife">Официальная группа Facebook</a>
   •  <a href="https://ok.ru/citylife.official">Официальная группа в ОК</a>
-  •  <a href="https://www.youtube.com/channel/UCfa56CVRUo9ABjV4xArhFnw">Официальный канал на YouTube</a>\n\n
+  •  <a href="https://www.youtube.com/channel/UCfa56CVRUo9ABjV4xArhFnw">Официальный канал на YouTube</a>\n
 Официальный сайт <b>CITYLIFE</b>:\n
-  •  <a href="https://cl.world/ru">https://cl.world/ru</a>\n\n
+  •  <a href="https://cl.world/ru">https://cl.world/ru</a>\n
 <b>CITYLIFE</b> - Одна карта. Масса привилегий.
 `, { parse_mode: "HTML", disable_web_page_preview: true }, {
             "reply_markup": {
