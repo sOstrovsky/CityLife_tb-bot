@@ -67,7 +67,7 @@ bot.onText(/\/start/, async (msg) => {
 Официальный сайт <b>CITYLIFE</b>:\n
   •  <a href="https://cl.world/ru">https://cl.world/ru</a>\n\n
 <b>CITYLIFE</b> - Одна карта. Масса привилегий.
-`, { parse_mode: "HTML" }, {
+`, { parse_mode: "HTML", disable_web_page_preview: true }, {
             "reply_markup": {
                 "keyboard": mainMenu,
                 "resize_keyboard": true
