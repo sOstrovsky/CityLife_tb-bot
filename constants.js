@@ -1,5 +1,5 @@
 export const constants = {
-    FETCH_URL: 'https://alpha-profile.cl.world/api/v3.1',
+    FETCH_URL: 'https://profile.cl.world/api/v3.1',
     GQL_QUERY:
         `query docs {
             companyDocuments {
