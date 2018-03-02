@@ -57,6 +57,7 @@ bot.onText(/\/start/, async (msg) => {
         bot.sendMessage(id, `Привет${Boolean(name) ? ', ' + name : ''}!\n${constants.START_MARKDOWN}`,
             {
                 parse_mode: "HTML",
+                disable_web_page_preview: true,
                 reply_markup: {
                     "keyboard": mainMenu,
                     "resize_keyboard": true,
