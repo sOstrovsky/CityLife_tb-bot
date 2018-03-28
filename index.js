@@ -33,7 +33,7 @@ const materials = [["Маркетинг", "Видео"], ["Акции", "Мин�
 const faqMenu = [["Для пользователей", "Для ТСП"], [constants.MAIN_BACK] ];
 
 bot.onText(/\/start/, async (msg) => {
-    console.log('---', documentsDownloadDate);
+    console.log('-documentsDownloadDate-', documentsDownloadDate);
     try {
         let response = await postQuery(constants.FETCH_URL, constants.GQL_QUERY);
         const { contacts, about, materials, faq } = response.data.data.companyDocuments;
